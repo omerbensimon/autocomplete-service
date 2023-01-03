@@ -4,11 +4,9 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const httpStatus = require('http-status');
 const connectDB = require('./src/services/db.services');
-const env = process.env;
 const cors = require('cors')
 const app = express();
 const port = process.env.APP_PORT || 3001;
-const db_uri = env.DB_URI;
 const employeesRouter = require('./src/routers/employees.route');
 const { default: helmet } = require('helmet');
 
@@ -32,12 +30,16 @@ app.use((err, req, res, next) => {
     return;
 });
 
-connectDB(db_uri)
+
+
+connectDB()
     .then(() => {
         app.listen(port, '0.0.0.0', () => {
-            console.log(`autocomplete service is running at http://localhost:${port}`)
+            console.log(`autocomplete service is running at ${port}`)
         })
     }).catch((err) => {
         console.error(err.message);
         process.exit(1);
     });
+
+module.exports = app

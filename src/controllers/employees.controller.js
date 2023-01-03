@@ -8,11 +8,20 @@ module.exports = class EmployeesController {
 
     initDB = () => {
         employeeSchema.deleteMany({}, function (err, result) {
+
             if (err) {
                 console.error(err);
             }
+            else {
+                employeeSchema.insertMany(employees, (err, result) => {
+
+                    if (err) {
+                        console.log('We have an error');
+                    }
+                })
+            }
         });
-        employeeSchema.insertMany(employees)
+
     }
 
     getEmployees = async () => {

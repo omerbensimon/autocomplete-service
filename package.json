@@ -1,0 +1,31 @@
+{
+  "name": "autocomplete-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omerbensimon/autocomplete-service.git"
+  },
+  "author": "Omer Ben Simon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omerbensimon/autocomplete-service/issues"
+  },
+  "homepage": "https://github.com/omerbensimon/autocomplete-service#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "http-status": "^1.6.1",
+    "mongoose": "^6.8.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
